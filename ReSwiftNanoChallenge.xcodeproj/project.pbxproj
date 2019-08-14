@@ -14,6 +14,7 @@
 		3A4D911823048E93001EAB6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D911723048E93001EAB6D /* Assets.xcassets */; };
 		3A4D911B23048E93001EAB6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D911923048E93001EAB6D /* LaunchScreen.storyboard */; };
 		A2FD5E93E15B132ACA1F3BA0 /* Pods_ReSwiftNanoChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368B41EE7B1A6041BCBC340B /* Pods_ReSwiftNanoChallenge.framework */; };
+		AA1C235923049D900000A132 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1C235823049D900000A132 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		3A4D911723048E93001EAB6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A4D911A23048E93001EAB6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A4D911C23048E93001EAB6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA1C235823049D900000A132 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = SOURCE_ROOT; };
 		FF25C26D136B53D08B4471D1 /* Pods-ReSwiftNanoChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftNanoChallenge.release.xcconfig"; path = "Target Support Files/Pods-ReSwiftNanoChallenge/Pods-ReSwiftNanoChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +68,7 @@
 				3A4D9128230497B6001EAB6D /* Network */,
 				3A4D9126230497A0001EAB6D /* Model */,
 				3A4D9125230495E0001EAB6D /* Action */,
-				3A4D9124230495D4001EAB6D /* Reduce */,
+				3A4D9124230495D4001EAB6D /* Reducer */,
 				3A4D9123230495C8001EAB6D /* State */,
 				3A4D91222304951F001EAB6D /* Support */,
 				3A4D910F23048E92001EAB6D /* ViewController.swift */,
@@ -90,15 +92,16 @@
 		3A4D9123230495C8001EAB6D /* State */ = {
 			isa = PBXGroup;
 			children = (
+				AA1C235823049D900000A132 /* AppState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
 		};
-		3A4D9124230495D4001EAB6D /* Reduce */ = {
+		3A4D9124230495D4001EAB6D /* Reducer */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Reduce;
+			path = Reducer;
 			sourceTree = "<group>";
 		};
 		3A4D9125230495E0001EAB6D /* Action */ = {
@@ -257,6 +260,7 @@
 				3A4D911023048E92001EAB6D /* ViewController.swift in Sources */,
 				3A4D910E23048E92001EAB6D /* AppDelegate.swift in Sources */,
 				3A4D911623048E92001EAB6D /* ReSwiftNanoChallenge.xcdatamodeld in Sources */,
+				AA1C235923049D900000A132 /* AppState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
