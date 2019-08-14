@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -63,15 +63,63 @@
 		3A4D910C23048E92001EAB6D /* ReSwiftNanoChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				3A4D910D23048E92001EAB6D /* AppDelegate.swift */,
+				3A4D9128230497B6001EAB6D /* Network */,
+				3A4D9126230497A0001EAB6D /* Model */,
+				3A4D9125230495E0001EAB6D /* Action */,
+				3A4D9124230495D4001EAB6D /* Reduce */,
+				3A4D9123230495C8001EAB6D /* State */,
+				3A4D91222304951F001EAB6D /* Support */,
 				3A4D910F23048E92001EAB6D /* ViewController.swift */,
 				3A4D911123048E92001EAB6D /* Main.storyboard */,
-				3A4D911723048E93001EAB6D /* Assets.xcassets */,
-				3A4D911923048E93001EAB6D /* LaunchScreen.storyboard */,
-				3A4D911C23048E93001EAB6D /* Info.plist */,
-				3A4D911423048E92001EAB6D /* ReSwiftNanoChallenge.xcdatamodeld */,
 			);
 			path = ReSwiftNanoChallenge;
+			sourceTree = "<group>";
+		};
+		3A4D91222304951F001EAB6D /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				3A4D911423048E92001EAB6D /* ReSwiftNanoChallenge.xcdatamodeld */,
+				3A4D911923048E93001EAB6D /* LaunchScreen.storyboard */,
+				3A4D911C23048E93001EAB6D /* Info.plist */,
+				3A4D911723048E93001EAB6D /* Assets.xcassets */,
+				3A4D910D23048E92001EAB6D /* AppDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		3A4D9123230495C8001EAB6D /* State */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		3A4D9124230495D4001EAB6D /* Reduce */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reduce;
+			sourceTree = "<group>";
+		};
+		3A4D9125230495E0001EAB6D /* Action */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
+		3A4D9126230497A0001EAB6D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3A4D9128230497B6001EAB6D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		BE33B8577B84E694B4BD2B6B /* Pods */ = {
@@ -80,7 +128,6 @@
 				0EBAE9EA75763331F55B4DD3 /* Pods-ReSwiftNanoChallenge.debug.xcconfig */,
 				FF25C26D136B53D08B4471D1 /* Pods-ReSwiftNanoChallenge.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -358,7 +405,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94578VT8X2;
-				INFOPLIST_FILE = ReSwiftNanoChallenge/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ReSwiftNanoChallenge/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,7 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94578VT8X2;
-				INFOPLIST_FILE = ReSwiftNanoChallenge/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ReSwiftNanoChallenge/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
