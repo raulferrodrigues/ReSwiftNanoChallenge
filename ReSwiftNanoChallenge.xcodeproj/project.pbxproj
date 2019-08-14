@@ -13,9 +13,12 @@
 		3A4D911623048E92001EAB6D /* ReSwiftNanoChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D911423048E92001EAB6D /* ReSwiftNanoChallenge.xcdatamodeld */; };
 		3A4D911823048E93001EAB6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D911723048E93001EAB6D /* Assets.xcassets */; };
 		3A4D911B23048E93001EAB6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D911923048E93001EAB6D /* LaunchScreen.storyboard */; };
+		A2FD5E93E15B132ACA1F3BA0 /* Pods_ReSwiftNanoChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368B41EE7B1A6041BCBC340B /* Pods_ReSwiftNanoChallenge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0EBAE9EA75763331F55B4DD3 /* Pods-ReSwiftNanoChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftNanoChallenge.debug.xcconfig"; path = "Target Support Files/Pods-ReSwiftNanoChallenge/Pods-ReSwiftNanoChallenge.debug.xcconfig"; sourceTree = "<group>"; };
+		368B41EE7B1A6041BCBC340B /* Pods_ReSwiftNanoChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSwiftNanoChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4D910A23048E92001EAB6D /* ReSwiftNanoChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReSwiftNanoChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4D910D23048E92001EAB6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A4D910F23048E92001EAB6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		3A4D911723048E93001EAB6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A4D911A23048E93001EAB6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A4D911C23048E93001EAB6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF25C26D136B53D08B4471D1 /* Pods-ReSwiftNanoChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftNanoChallenge.release.xcconfig"; path = "Target Support Files/Pods-ReSwiftNanoChallenge/Pods-ReSwiftNanoChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2FD5E93E15B132ACA1F3BA0 /* Pods_ReSwiftNanoChallenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				3A4D910C23048E92001EAB6D /* ReSwiftNanoChallenge */,
 				3A4D910B23048E92001EAB6D /* Products */,
+				BE33B8577B84E694B4BD2B6B /* Pods */,
+				DDD454A2786492CFCC3BEAAA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = ReSwiftNanoChallenge;
 			sourceTree = "<group>";
 		};
+		BE33B8577B84E694B4BD2B6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0EBAE9EA75763331F55B4DD3 /* Pods-ReSwiftNanoChallenge.debug.xcconfig */,
+				FF25C26D136B53D08B4471D1 /* Pods-ReSwiftNanoChallenge.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DDD454A2786492CFCC3BEAAA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				368B41EE7B1A6041BCBC340B /* Pods_ReSwiftNanoChallenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A4D911F23048E93001EAB6D /* Build configuration list for PBXNativeTarget "ReSwiftNanoChallenge" */;
 			buildPhases = (
+				634A52AF257B240FE8DDCE6F /* [CP] Check Pods Manifest.lock */,
 				3A4D910623048E92001EAB6D /* Sources */,
 				3A4D910723048E92001EAB6D /* Frameworks */,
 				3A4D910823048E92001EAB6D /* Resources */,
+				55D73841B048C3500AB80F7C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55D73841B048C3500AB80F7C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReSwiftNanoChallenge/Pods-ReSwiftNanoChallenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ReSwiftNanoChallenge/Pods-ReSwiftNanoChallenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReSwiftNanoChallenge/Pods-ReSwiftNanoChallenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		634A52AF257B240FE8DDCE6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ReSwiftNanoChallenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A4D910623048E92001EAB6D /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		3A4D912023048E93001EAB6D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EBAE9EA75763331F55B4DD3 /* Pods-ReSwiftNanoChallenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +372,7 @@
 		};
 		3A4D912123048E93001EAB6D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF25C26D136B53D08B4471D1 /* Pods-ReSwiftNanoChallenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
