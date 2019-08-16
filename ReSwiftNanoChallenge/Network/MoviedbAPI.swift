@@ -13,6 +13,88 @@
 //  let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
 import Foundation
+import UIKit
+
+private let apiKey = "02767cc381f5b106fdd67e276322c5c9"
+
+class Network {
+    
+    static func nowPlaying(callback: @escaping ([Result]?, Error?) -> Void) {
+        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)&language=en-US&page=1")
+        
+        if let connect = url {
+            let task = URLSession.shared.dataTask(with: connect) { (data, response, error) in
+                if let error = error {
+                    callback(nil, error)
+                }
+                    
+                let decoder = JSONDecoder()
+                let res = try? decoder.decode(NowPlaying.self, from: data!)
+                callback(res?.results, nil)
+            }
+            task.resume()
+        }
+    }
+    
+    static func popular(callback: @escaping ([Result]?, Error?) -> Void) {
+        let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)&language=en-US&page=1")
+        
+        if let connect = url {
+            let task = URLSession.shared.dataTask(with: connect) { (data, response, error) in
+                
+                if let error = error {
+                    callback(nil, error)
+                }
+                    
+                else if let data = data {
+                    let decoder = JSONDecoder()
+                    let res = try? decoder.decode(Popular.self, from: data)
+                    callback(res?.results, nil)
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    static func movieDetails(id: Int, callback: @escaping (Details?, Error?) -> Void) {
+        let url = URL(string: "https://api.themoviedb.org/3/movie/\(id)?api_key=\(apiKey)&language=en-US")
+        
+        
+        if let connect = url {
+            
+            let task = URLSession.shared.dataTask(with: connect) { (data, response, error) in
+
+                if let error = error {
+                    callback(nil, error)
+                }
+                
+                else if let data = data {
+                    let decoder = JSONDecoder()
+                    let res = try? decoder.decode(Details.self, from: data)
+                    callback(res, nil)
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    static func moviePoster(imagePath: String, callback: @escaping (Data?, String?) -> Void) {
+        let urlBase = "https://image.tmdb.org/t/p/w500"
+        let finalUrl = urlBase + imagePath
+        
+        if let url = URL(string: finalUrl) {
+            DispatchQueue.global(qos: .background).async {
+                if let data = try? Data(contentsOf: url) {
+                    callback(data, imagePath)
+                } else {
+                    callback(nil, nil)
+                }
+            }
+        } else {
+            callback(nil, nil)
+        }
+    }
+}
 
 // MARK: - NowPlaying
 struct NowPlaying: Codable {
@@ -46,7 +128,7 @@ struct Popular: Codable {
 struct Details: Codable {
     let adult: Bool?
     let backdropPath: String?
-    let belongsToCollection: Int?
+    let belongsToCollection: BelongsToCollection?
     let budget: Int?
     let genres: [Genre]?
     let homepage: String?
@@ -82,6 +164,36 @@ struct Details: Codable {
         case status, tagline, title, video
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
+    }
+}
+
+// MARK: - Result
+struct Result: Codable {
+    let voteCount, id: Int?
+    let video: Bool?
+    let voteAverage: Double?
+    let title: String?
+    let popularity: Double?
+    let posterPath: String?
+    let originalLanguage: String?
+    let originalTitle: String?
+    let genreIDS: [Int]?
+    let backdropPath: String?
+    let adult: Bool?
+    let overview, releaseDate: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case voteCount = "vote_count"
+        case id, video
+        case voteAverage = "vote_average"
+        case title, popularity
+        case posterPath = "poster_path"
+        case originalLanguage = "original_language"
+        case originalTitle = "original_title"
+        case genreIDS = "genre_ids"
+        case backdropPath = "backdrop_path"
+        case adult, overview
+        case releaseDate = "release_date"
     }
 }
 
@@ -129,32 +241,14 @@ struct Dates: Codable {
     let maximum, minimum: String?
 }
 
-// MARK: - Result
-struct Result: Codable {
-    let voteCount, id: Int?
-    let video: Bool?
-    let voteAverage: Double?
-    let title: String?
-    let popularity: Double?
-    let posterPath: String?
-    let originalLanguage: String?
-    let originalTitle: String?
-    let genreIDS: [Int]?
-    let backdropPath: String?
-    let adult: Bool?
-    let overview, releaseDate: String?
+// MARK: - BelongsToCollection
+struct BelongsToCollection: Codable {
+    let id: Int?
+    let name, posterPath, backdropPath: String?
     
     enum CodingKeys: String, CodingKey {
-        case voteCount = "vote_count"
-        case id, video
-        case voteAverage = "vote_average"
-        case title, popularity
+        case id, name
         case posterPath = "poster_path"
-        case originalLanguage = "original_language"
-        case originalTitle = "original_title"
-        case genreIDS = "genre_ids"
         case backdropPath = "backdrop_path"
-        case adult, overview
-        case releaseDate = "release_date"
     }
 }
