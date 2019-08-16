@@ -15,6 +15,14 @@
 		3A4D911B23048E93001EAB6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D911923048E93001EAB6D /* LaunchScreen.storyboard */; };
 		3A4D912A23049831001EAB6D /* MoviedbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D912923049831001EAB6D /* MoviedbAPI.swift */; };
 		A2FD5E93E15B132ACA1F3BA0 /* Pods_ReSwiftNanoChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368B41EE7B1A6041BCBC340B /* Pods_ReSwiftNanoChallenge.framework */; };
+		AA32A62923071EA200DC41E8 /* PopularState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32A62823071EA200DC41E8 /* PopularState.swift */; };
+		AA32A62B230727FB00DC41E8 /* PopularReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32A62A230727FB00DC41E8 /* PopularReducer.swift */; };
+		AA32A62D2307300400DC41E8 /* NowPlayingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA32A62C2307300400DC41E8 /* NowPlayingTableViewCell.swift */; };
+		AAFC2B022305F380008FC5C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC2B012305F380008FC5C5 /* MainViewController.swift */; };
+		AAFC2B062305FEB6008FC5C5 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC2B052305FEB6008FC5C5 /* AppState.swift */; };
+		AAFC2B0A2305FFED008FC5C5 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC2B092305FFED008FC5C5 /* AppReducer.swift */; };
+		AAFC2B0C23060692008FC5C5 /* NowPlayingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC2B0B23060692008FC5C5 /* NowPlayingState.swift */; };
+		AAFC2B0E230607C2008FC5C5 /* NowPlayingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC2B0D230607C2008FC5C5 /* NowPlayingReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +37,14 @@
 		3A4D911A23048E93001EAB6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A4D911C23048E93001EAB6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A4D912923049831001EAB6D /* MoviedbAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviedbAPI.swift; sourceTree = "<group>"; };
+		AA32A62823071EA200DC41E8 /* PopularState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularState.swift; sourceTree = "<group>"; };
+		AA32A62A230727FB00DC41E8 /* PopularReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularReducer.swift; sourceTree = "<group>"; };
+		AA32A62C2307300400DC41E8 /* NowPlayingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingTableViewCell.swift; sourceTree = "<group>"; };
+		AAFC2B012305F380008FC5C5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		AAFC2B052305FEB6008FC5C5 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppState.swift; path = ReSwiftNanoChallenge/View/AppState.swift; sourceTree = SOURCE_ROOT; };
+		AAFC2B092305FFED008FC5C5 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppReducer.swift; path = ReSwiftNanoChallenge/View/AppReducer.swift; sourceTree = SOURCE_ROOT; };
+		AAFC2B0B23060692008FC5C5 /* NowPlayingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingState.swift; path = ReSwiftNanoChallenge/View/NowPlayingState.swift; sourceTree = SOURCE_ROOT; };
+		AAFC2B0D230607C2008FC5C5 /* NowPlayingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingReducer.swift; path = ReSwiftNanoChallenge/View/NowPlayingReducer.swift; sourceTree = SOURCE_ROOT; };
 		FF25C26D136B53D08B4471D1 /* Pods-ReSwiftNanoChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftNanoChallenge.release.xcconfig"; path = "Target Support Files/Pods-ReSwiftNanoChallenge/Pods-ReSwiftNanoChallenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				3A4D910C23048E92001EAB6D /* ReSwiftNanoChallenge */,
+				3A4D910F23048E92001EAB6D /* ViewController.swift */,
 				3A4D910B23048E92001EAB6D /* Products */,
 				BE33B8577B84E694B4BD2B6B /* Pods */,
 				DDD454A2786492CFCC3BEAAA /* Frameworks */,
@@ -68,11 +85,10 @@
 				3A4D9128230497B6001EAB6D /* Network */,
 				3A4D9126230497A0001EAB6D /* Model */,
 				3A4D9125230495E0001EAB6D /* Action */,
-				3A4D9124230495D4001EAB6D /* Reduce */,
+				3A4D9124230495D4001EAB6D /* Reducer */,
 				3A4D9123230495C8001EAB6D /* State */,
 				3A4D91222304951F001EAB6D /* Support */,
-				3A4D910F23048E92001EAB6D /* ViewController.swift */,
-				3A4D911123048E92001EAB6D /* Main.storyboard */,
+				AAFC2B002305F32F008FC5C5 /* View */,
 			);
 			path = ReSwiftNanoChallenge;
 			sourceTree = "<group>";
@@ -92,15 +108,21 @@
 		3A4D9123230495C8001EAB6D /* State */ = {
 			isa = PBXGroup;
 			children = (
+				AAFC2B052305FEB6008FC5C5 /* AppState.swift */,
+				AAFC2B0B23060692008FC5C5 /* NowPlayingState.swift */,
+				AA32A62823071EA200DC41E8 /* PopularState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
 		};
-		3A4D9124230495D4001EAB6D /* Reduce */ = {
+		3A4D9124230495D4001EAB6D /* Reducer */ = {
 			isa = PBXGroup;
 			children = (
+				AAFC2B092305FFED008FC5C5 /* AppReducer.swift */,
+				AAFC2B0D230607C2008FC5C5 /* NowPlayingReducer.swift */,
+				AA32A62A230727FB00DC41E8 /* PopularReducer.swift */,
 			);
-			path = Reduce;
+			path = Reducer;
 			sourceTree = "<group>";
 		};
 		3A4D9125230495E0001EAB6D /* Action */ = {
@@ -123,6 +145,16 @@
 				3A4D912923049831001EAB6D /* MoviedbAPI.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		AAFC2B002305F32F008FC5C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3A4D911123048E92001EAB6D /* Main.storyboard */,
+				AAFC2B012305F380008FC5C5 /* MainViewController.swift */,
+				AA32A62C2307300400DC41E8 /* NowPlayingTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BE33B8577B84E694B4BD2B6B /* Pods */ = {
@@ -259,8 +291,16 @@
 			files = (
 				3A4D911023048E92001EAB6D /* ViewController.swift in Sources */,
 				3A4D910E23048E92001EAB6D /* AppDelegate.swift in Sources */,
+				AAFC2B0E230607C2008FC5C5 /* NowPlayingReducer.swift in Sources */,
+				AAFC2B0C23060692008FC5C5 /* NowPlayingState.swift in Sources */,
+				AAFC2B062305FEB6008FC5C5 /* AppState.swift in Sources */,
+				AAFC2B0A2305FFED008FC5C5 /* AppReducer.swift in Sources */,
+				AA32A62B230727FB00DC41E8 /* PopularReducer.swift in Sources */,
+				AA32A62D2307300400DC41E8 /* NowPlayingTableViewCell.swift in Sources */,
+				AA32A62923071EA200DC41E8 /* PopularState.swift in Sources */,
 				3A4D911623048E92001EAB6D /* ReSwiftNanoChallenge.xcdatamodeld in Sources */,
 				3A4D912A23049831001EAB6D /* MoviedbAPI.swift in Sources */,
+				AAFC2B022305F380008FC5C5 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +448,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94578VT8X2;
+				DEVELOPMENT_TEAM = V4HVD5P383;
 				INFOPLIST_FILE = "$(SRCROOT)/ReSwiftNanoChallenge/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -427,7 +467,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 94578VT8X2;
+				DEVELOPMENT_TEAM = V4HVD5P383;
 				INFOPLIST_FILE = "$(SRCROOT)/ReSwiftNanoChallenge/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
