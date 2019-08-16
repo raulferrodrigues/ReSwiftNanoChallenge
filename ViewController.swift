@@ -9,10 +9,68 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var imageView: UIImageView!
+    
+    var cache = NSCache<NSString, AnyObject>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print("ok")
+        
+        Network.nowPlaying() { result, error in
+            if let error = error {
+                print("error")
+                return
+            }
+
+            guard let result = result else { return }
+            
+            Network.moviePoster(imagePath: result[0].posterPath!, callback: { (data, path) in
+                DispatchQueue.main.sync { [weak self] in
+                    guard let self = self else { return }
+                    guard let data = data else { return }
+                    guard let path = path else { return }
+                    
+                    let image = UIImage(data: data)
+                    self.imageView.image = image
+                    self.cache.setObject(image!, forKey: NSString(string: path))
+                }
+            })
+            
+            if let imageObject = self.cache.object(forKey: "/keym7MPn1icW1wWfzMnW3HeuzWU.jpg") {
+                print("Cache hit!")
+                self.imageView.image = imageObject as? UIImage
+            }
+            
+            Network.moviePoster(imagePath: result[0].posterPath!, callback: { (data, path) in
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    guard let data = data else { return }
+                    guard let path = path else { return }
+                    
+                    let image = UIImage(data: data)
+                    self.imageView.image = image
+                    self.cache.setObject(image!, forKey: NSString(string: path))
+                }
+            })
+            
+            for movie in result {
+                print("\(movie.posterPath!)")
+                Network.movieDetails(id: movie.id!, callback: { details, error in
+                    if let error = error {
+                        print("error")
+                        return
+                    }
+                    
+                    guard let details = details else { return }
+                    
+                    print("\n\(details.originalTitle!)")
+                    for genre in details.genres! {
+                        print(genre.name!)
+                    }
+                })
+            }
+        }
     }
 
 
