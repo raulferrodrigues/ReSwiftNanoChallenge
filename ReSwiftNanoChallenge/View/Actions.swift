@@ -14,10 +14,12 @@ struct GetNowPlaying: Action { }
 
 struct SetPopular: Action {
     let movies: [Result]
+    let posters: [String: Data?]
 }
 
 struct SetNowPlaying: Action {
     let movies: [Result]
+    let posters: [String: Data?]
 }
 
 struct ErrorAction: Action {

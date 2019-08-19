@@ -11,5 +11,6 @@ import ReSwift
 struct PopularState: StateType {
     var tableState: DataState
     var movies: [Result]?
+    var posters: [String: Data?]?
     var error: Error?
 }

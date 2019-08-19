@@ -17,6 +17,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         mainTable.delegate = self
         mainTable.dataSource = self
         
@@ -83,14 +85,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 let title = popularMovies[indexPath.row].title ?? ""
                 let overview = popularMovies[indexPath.row].overview ?? ""
                 let rate = popularMovies[indexPath.row].voteAverage ?? 0
-                DispatchQueue.main.async { [weak cell, posterPath] in
-                    guard let cell = cell else { return }
-                    Network.moviePoster(imagePath: posterPath) { (data, path) in
-                        if let data = data {
-                            cell.set(image: data, title: title, overview: overview, rate: String(rate))
-                        }
-                    }
-                }
+                let dic = store.state.popularState.posters ?? [:]
+                cell.set(image: dic[posterPath]!!, title: title, overview: overview, rate: String(rate))
             }
             return cell
         }
@@ -143,9 +139,20 @@ extension MainViewController {
                     if let error = error {
                         store.dispatch(ErrorAction(error: error))
                     } else {
-                        store.dispatch(SetPopular(movies: results!))
+                        guard let results = results else { return }
+                        var dic: [String : Data?] = [:]
+                        for result in results {
+                            guard let posterPath = result.posterPath else { return }
+                            Network.moviePoster(imagePath: posterPath) { (data, path) in
+                                guard let path = path else { return }
+                                dic.updateValue(data, forKey: path)
+                            }
+                        }
+                        store.dispatch(SetPopular(movies: results, posters: dic))
                     }
                 }
+                
+                
             }
         }
         return nil

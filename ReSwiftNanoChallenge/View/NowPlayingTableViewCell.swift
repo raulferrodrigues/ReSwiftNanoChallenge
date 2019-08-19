@@ -91,7 +91,7 @@ extension NowPlayingTableViewCell {
                     if let error = error {
                         store.dispatch(ErrorAction(error: error))
                     } else {
-                        store.dispatch(SetNowPlaying(movies: results!))
+                        store.dispatch(SetNowPlaying(movies: results!, posters: [:]))
                     }
                 }
             }
