@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A4D336E23074C87009E23F1 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D336D23074C87009E23F1 /* Details.storyboard */; };
 		3A4D910E23048E92001EAB6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D910D23048E92001EAB6D /* AppDelegate.swift */; };
 		3A4D911023048E92001EAB6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D910F23048E92001EAB6D /* ViewController.swift */; };
 		3A4D911323048E92001EAB6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D911123048E92001EAB6D /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		0EBAE9EA75763331F55B4DD3 /* Pods-ReSwiftNanoChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReSwiftNanoChallenge.debug.xcconfig"; path = "Target Support Files/Pods-ReSwiftNanoChallenge/Pods-ReSwiftNanoChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		368B41EE7B1A6041BCBC340B /* Pods_ReSwiftNanoChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReSwiftNanoChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A4D336D23074C87009E23F1 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		3A4D910A23048E92001EAB6D /* ReSwiftNanoChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReSwiftNanoChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4D910D23048E92001EAB6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A4D910F23048E92001EAB6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				3A4D9123230495C8001EAB6D /* State */,
 				3A4D91222304951F001EAB6D /* Support */,
 				3A4D910F23048E92001EAB6D /* ViewController.swift */,
+				3A4D336D23074C87009E23F1 /* Details.storyboard */,
 				3A4D911123048E92001EAB6D /* Main.storyboard */,
 			);
 			path = ReSwiftNanoChallenge;
@@ -205,6 +208,7 @@
 				3A4D911B23048E93001EAB6D /* LaunchScreen.storyboard in Resources */,
 				3A4D911823048E93001EAB6D /* Assets.xcassets in Resources */,
 				3A4D911323048E92001EAB6D /* Main.storyboard in Resources */,
+				3A4D336E23074C87009E23F1 /* Details.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
