@@ -9,5 +9,7 @@
 import ReSwift
 
 struct PopularState: StateType {
-    var table: DataState
+    var tableState: DataState
+    var movies: [Result]?
+    var error: Error?
 }

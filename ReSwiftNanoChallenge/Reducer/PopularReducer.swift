@@ -9,6 +9,20 @@
 import ReSwift
 
 func popularReducer(action: Action, state: PopularState?) -> PopularState {
-    let state = state ?? PopularState(table: .loading)
+    var state = state ?? PopularState(tableState: .loading, movies: nil, error: nil)
+    
+    switch action {
+    case _ as GetPopular:
+        break
+    case let action as SetPopular:
+        state.movies = action.movies
+        state.tableState = .done
+    case let action as ErrorAction:
+        state.tableState = .error
+        state.error = action.error
+    default:
+        break
+    }
+    
     return state
 }

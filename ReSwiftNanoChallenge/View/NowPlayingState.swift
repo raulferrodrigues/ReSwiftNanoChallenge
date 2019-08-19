@@ -9,7 +9,9 @@
 import ReSwift
 
 struct NowPlayingState: StateType {
-    var collection: DataState
+    var collectionState: DataState
+    var movies: [Result]?
+    var error: Error?
 }
 
 enum DataState {

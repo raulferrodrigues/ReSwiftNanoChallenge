@@ -9,6 +9,20 @@
 import ReSwift
 
 func nowPlayingReducer(action: Action, state: NowPlayingState?) -> NowPlayingState {
-    let state = state ?? NowPlayingState(collection: .loading)
+    var state = state ?? NowPlayingState(collectionState: .loading, movies: nil, error: nil)
+    
+    switch action {
+    case _ as GetNowPlaying:
+        break
+    case let action as SetNowPlaying:
+        state.movies = action.movies
+        state.collectionState = .done
+    case let action as ErrorAction:
+        state.collectionState = .error
+        state.error = action.error
+    default:
+        break
+    }
+    
     return state
 }

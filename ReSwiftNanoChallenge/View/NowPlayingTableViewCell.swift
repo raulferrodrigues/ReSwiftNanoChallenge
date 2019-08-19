@@ -7,16 +7,28 @@
 //
 
 import UIKit
+import ReSwift
 
 class NowPlayingTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nowPlayingCollectionView: UICollectionView!
+    var nowPlayingMovies: [Result]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         nowPlayingCollectionView.delegate = self
         nowPlayingCollectionView.dataSource = self
+        
+        if let action = fetchNowPlaying(state: store.state.nowPlayingState, store: store) {
+            store.dispatch(action)
+        }
+        
+        store.subscribe(self) {
+            $0.select{
+                $0.nowPlayingState
+            }
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,11 +41,61 @@ class NowPlayingTableViewCell: UITableViewCell {
 
 extension NowPlayingTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        if let nowPlayingMovies = nowPlayingMovies {
+            return nowPlayingMovies.count
+        } else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! NowPlayingCollectionViewCell
+        
+        if let nowPlayingMovies = nowPlayingMovies {
+            let imagePath = nowPlayingMovies[indexPath.row].posterPath ?? "placeholder-image"
+            let title = nowPlayingMovies[indexPath.row].title ?? "'"
+            let rate = nowPlayingMovies[indexPath.row].voteAverage ?? 0
+            cell.set(imagePath: imagePath, title: title, rate: String(rate))
+        }
+        
         return cell
+    }
+}
+
+extension NowPlayingTableViewCell: StoreSubscriber {
+    typealias StoreSubscriberStateType = NowPlayingState
+    
+    func newState(state: NowPlayingState) {
+        switch state.collectionState {
+        case .loading,
+            .error:
+            DispatchQueue.main.async {
+                self.nowPlayingCollectionView.isHidden = false
+            }
+        case .done:
+            DispatchQueue.main.async {
+                self.nowPlayingMovies = state.movies
+                self.nowPlayingCollectionView.reloadData()
+                self.nowPlayingCollectionView.isHidden = false
+            }
+        }
+    }
+}
+
+extension NowPlayingTableViewCell {
+    func fetchNowPlaying(state: NowPlayingState, store: Store<AppState>) -> Action? {
+        if state.collectionState == .loading {
+            DispatchQueue.main.async { [weak self] in
+                guard self != nil else { return }
+                Network.nowPlaying { (results, error) in
+                    if let error = error {
+                        store.dispatch(ErrorAction(error: error))
+                    } else {
+                        store.dispatch(SetNowPlaying(movies: results!))
+                    }
+                }
+            }
+        }
+        return nil
     }
 }

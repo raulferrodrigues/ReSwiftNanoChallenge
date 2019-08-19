@@ -83,7 +83,7 @@ class Network {
         let finalUrl = urlBase + imagePath
         
         if let url = URL(string: finalUrl) {
-            DispatchQueue.global(qos: .background).async {
+            DispatchQueue.main.async {
                 if let data = try? Data(contentsOf: url) {
                     callback(data, imagePath)
                 } else {
