@@ -26,7 +26,6 @@ class ViewController: UIViewController {
             guard let result = result else { return }
             
             if let imageObject = self.cache.object(forKey: "/keym7MPn1icW1wWfzMnW3HeuzWU.jpg") {
-                print("Cache hit!")
                 self.imageView.image = imageObject as? UIImage
             } else {
                 Network.moviePoster(imagePath: result[0].posterPath!, completionHandler: { (data, path) in

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6V2-n0-8e1">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="rHo-4i-jj7">
+            <objects>
+                <viewController id="6V2-n0-8e1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="is4-He-RUv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lionKingCover" translatesAutoresizingMaskIntoConstraints="NO" id="M4j-c0-OgO">
+                                <rect key="frame" x="21" y="62" width="128" height="194"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="194" id="TEg-la-0Nd"/>
+                                    <constraint firstAttribute="width" constant="128" id="TWO-9z-cZE"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Lion King" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDN-jf-l3R">
+                                <rect key="frame" x="163" y="147" width="125" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adventure, Animation, Family, Drama, Action" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvM-gN-5H1">
+                                <rect key="frame" x="163" y="178" width="200" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ysP-MI-uXv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starRating" translatesAutoresizingMaskIntoConstraints="NO" id="ols-Ta-qEP">
+                                <rect key="frame" x="163" y="231" width="13" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="13" id="AZR-MU-NGg"/>
+                                    <constraint firstAttribute="height" constant="13" id="T7J-XC-dNk"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSU-Qj-N3E">
+                                <rect key="frame" x="181" y="230.5" width="14.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMG-9V-nap">
+                                <rect key="frame" x="21" y="274" width="61" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="whn-ge-fxn">
+                                <rect key="frame" x="21" y="303" width="372" height="519"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Simba idolises his father, King Mufasa, and takes to heart his own royal destiny. But not everyone in the kingdom celebrates the new cub's arrival. Scar, Mufasa's brother—and former heir to the throne—has plans of his own. The battle for Pride Rock is ravaged with betrayal, tragedy and drama, ultimately resulting in Simba's exile. With help from a curious pair of newfound friends, Simba will have to figure out how to grow up and take back what is rightfully his. 
+
+Simba idolises his father, King Mufasa, and takes to heart his own royal destiny. But not everyone in the kingdom celebrates the new cub's arrival. Scar, Mufasa's brother—and former heir to the throne—has plans of his own. The battle for Pride Rock is ravaged with betrayal, tragedy and drama, ultimately resulting in Simba's exile. With help from a curious pair of newfound friends, Simba will have to figure out how to grow up and take back what is rightfully his. \n\nSimba idolises his father, King Mufasa, and takes to heart his own royal destiny. But not everyone in the kingdom celebrates the new cub's arrival. Scar, Mufasa's brother—and former heir to the throne—has plans of his own. The battle for Pride Rock is ravaged with betrayal, tragedy and drama, ultimately resulting in Simba's exile. With help from a curious pair of newfound friends, Simba will have to figure out how to grow up and take back what is rightfully his. </mutableString>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gUy-jC-jnr" firstAttribute="bottom" secondItem="whn-ge-fxn" secondAttribute="bottom" constant="40" id="B33-KL-4Z9"/>
+                            <constraint firstItem="SvM-gN-5H1" firstAttribute="top" secondItem="FDN-jf-l3R" secondAttribute="bottom" constant="7" id="CIv-Oa-e8l"/>
+                            <constraint firstItem="FDN-jf-l3R" firstAttribute="top" secondItem="gUy-jC-jnr" secondAttribute="top" constant="103" id="Cyx-ze-7qR"/>
+                            <constraint firstItem="rMG-9V-nap" firstAttribute="leading" secondItem="gUy-jC-jnr" secondAttribute="leading" constant="21" id="Kum-Wy-0Ee"/>
+                            <constraint firstItem="M4j-c0-OgO" firstAttribute="leading" secondItem="gUy-jC-jnr" secondAttribute="leading" constant="21" id="NhI-KG-kJn"/>
+                            <constraint firstItem="M4j-c0-OgO" firstAttribute="top" secondItem="gUy-jC-jnr" secondAttribute="top" constant="18" id="R7N-wc-tW6"/>
+                            <constraint firstItem="ols-Ta-qEP" firstAttribute="top" secondItem="SvM-gN-5H1" secondAttribute="bottom" constant="12" id="ROY-J4-e6y"/>
+                            <constraint firstItem="whn-ge-fxn" firstAttribute="centerX" secondItem="is4-He-RUv" secondAttribute="centerX" id="Uyv-rj-cNA"/>
+                            <constraint firstItem="FDN-jf-l3R" firstAttribute="leading" secondItem="M4j-c0-OgO" secondAttribute="trailing" constant="14" id="aIN-ho-rNF"/>
+                            <constraint firstItem="whn-ge-fxn" firstAttribute="top" secondItem="rMG-9V-nap" secondAttribute="bottom" constant="12" id="aSl-NR-Gct"/>
+                            <constraint firstItem="NSU-Qj-N3E" firstAttribute="leading" secondItem="ols-Ta-qEP" secondAttribute="trailing" constant="5" id="d5E-jq-EiZ"/>
+                            <constraint firstItem="whn-ge-fxn" firstAttribute="leading" secondItem="gUy-jC-jnr" secondAttribute="leading" constant="21" id="fJe-hi-f46"/>
+                            <constraint firstItem="SvM-gN-5H1" firstAttribute="leading" secondItem="M4j-c0-OgO" secondAttribute="trailing" constant="14" id="j4X-Ib-aw6"/>
+                            <constraint firstItem="ols-Ta-qEP" firstAttribute="leading" secondItem="M4j-c0-OgO" secondAttribute="trailing" constant="14" id="mMw-V1-ddJ"/>
+                            <constraint firstItem="NSU-Qj-N3E" firstAttribute="centerY" secondItem="ols-Ta-qEP" secondAttribute="centerY" id="rFP-Rh-Ng8"/>
+                            <constraint firstItem="rMG-9V-nap" firstAttribute="top" secondItem="M4j-c0-OgO" secondAttribute="bottom" constant="18" id="yOU-U3-ngu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gUy-jC-jnr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9PQ-qG-Y7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-133.33333333333334" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lionKingCover" width="128" height="194"/>
+        <image name="starRating" width="17" height="17"/>
+    </resources>
+</document>
