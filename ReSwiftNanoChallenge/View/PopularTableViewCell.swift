@@ -36,4 +36,8 @@ class PopularTableViewCell: UITableViewCell {
         self.movieRate.text = rate
     }
     
+    override func prepareForReuse() {
+        moviePoster.image = nil
+    }
+    
 }
