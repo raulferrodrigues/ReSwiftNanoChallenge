@@ -72,7 +72,6 @@ class Network {
                 } else {
                     completionHandler(nil, nil)
                 }
-            }
         } else {
             completionHandler(nil, nil)
         }
