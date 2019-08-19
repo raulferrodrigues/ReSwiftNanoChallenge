@@ -19,77 +19,62 @@ private let apiKey = "02767cc381f5b106fdd67e276322c5c9"
 
 class Network {
     
-    static func nowPlaying(callback: @escaping ([Result]?, Error?) -> Void) {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)&language=en-US&page=1")
-        
-        if let connect = url {
-            let task = URLSession.shared.dataTask(with: connect) { (data, response, error) in
-                if let error = error {
-                    callback(nil, error)
-                }
-                    
+    static func nowPlaying(completionHandler: @escaping ([Result]?, Error?) -> Void) {
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)&language=en-US&page=1") else { return }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completionHandler(nil, error)
+            }
+            let decoder = JSONDecoder()
+            let res = try? decoder.decode(NowPlaying.self, from: data!)
+            completionHandler(res?.results, nil)
+        }
+        task.resume()
+    }
+    
+    static func popular(completionHandler: @escaping ([Result]?, Error?) -> Void) {
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)&language=en-US&page=1") else { return }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completionHandler(nil, error)
+            }
+            else if let data = data {
                 let decoder = JSONDecoder()
-                let res = try? decoder.decode(NowPlaying.self, from: data!)
-                callback(res?.results, nil)
+                let res = try? decoder.decode(Popular.self, from: data)
+                completionHandler(res?.results, nil)
             }
-            task.resume()
         }
+        task.resume()
     }
     
-    static func popular(callback: @escaping ([Result]?, Error?) -> Void) {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=\(apiKey)&language=en-US&page=1")
-        
-        if let connect = url {
-            let task = URLSession.shared.dataTask(with: connect) { (data, response, error) in
-                
-                if let error = error {
-                    callback(nil, error)
-                }
-                    
-                else if let data = data {
-                    let decoder = JSONDecoder()
-                    let res = try? decoder.decode(Popular.self, from: data)
-                    callback(res?.results, nil)
-                }
+    static func movieDetails(id: Int, completionHandler: @escaping (Details?, Error?) -> Void) {
+        guard let url = URL(string: "https://api.themoviedb.org/3/movie/\(id)?api_key=\(apiKey)&language=en-US") else { return }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completionHandler(nil, error)
             }
-            task.resume()
+            else if let data = data {
+                let decoder = JSONDecoder()
+                let res = try? decoder.decode(Details.self, from: data)
+                completionHandler(res, nil)
+            }
         }
+        task.resume()
     }
     
-    static func movieDetails(id: Int, callback: @escaping (Details?, Error?) -> Void) {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/\(id)?api_key=\(apiKey)&language=en-US")
-        
-        
-        if let connect = url {
-            
-            let task = URLSession.shared.dataTask(with: connect) { (data, response, error) in
-
-                if let error = error {
-                    callback(nil, error)
-                }
-                
-                else if let data = data {
-                    let decoder = JSONDecoder()
-                    let res = try? decoder.decode(Details.self, from: data)
-                    callback(res, nil)
-                }
-            }
-            task.resume()
-        }
-    }
-    
-    static func moviePoster(imagePath: String, callback: @escaping (Data?, String?) -> Void) {
+    static func moviePoster(imagePath: String, completionHandler: @escaping (Data?, String?) -> Void) {
         let urlBase = "https://image.tmdb.org/t/p/w500"
         let finalUrl = urlBase + imagePath
         
         if let url = URL(string: finalUrl) {
-            if let data = try? Data(contentsOf: url) {
-                callback(data, imagePath)
-            } else {
-                callback(nil, nil)
+                if let data = try? Data(contentsOf: url) {
+                    completionHandler(data, imagePath)
+                } else {
+                    completionHandler(nil, nil)
+                }
             }
         } else {
-            callback(nil, nil)
+            completionHandler(nil, nil)
         }
     }
 }
