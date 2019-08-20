@@ -61,9 +61,11 @@ class MainViewController: UIViewController {
         if segue.identifier == "detailsSegue" {
             guard let sender = sender as? Result                                else { fatalError() }
             guard let destination = segue.destination as? DetailsViewController else { fatalError() }
-            guard let dictionary = store.state.popularState.posters             else { fatalError() }
+            guard let popularPostersDic = store.state.popularState.posters      else { fatalError() }
+            guard let nowPlayingPostersDic = store.state.nowPlayingState.posters else { fatalError() }
+            let postersDic = popularPostersDic.merging(nowPlayingPostersDic) { (_, new) in new }
             guard let posterPath = sender.posterPath                            else { fatalError() }
-            guard let value = dictionary[posterPath]                            else { fatalError() }
+            guard let value = postersDic[posterPath]                            else { fatalError() }
             guard let posterData = value                                        else { fatalError() }
             guard let image = UIImage(data: posterData)                         else { fatalError() }
             
@@ -126,6 +128,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "nowPlayingCell", for: indexPath) as! NowPlayingTableViewCell
+            cell.delegate = self
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "popularMoviesCell", for: indexPath) as! PopularTableViewCell
@@ -142,6 +145,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Section: \(indexPath.section)")
         guard let popularMovies = popularMovies else { return }
         performSegue(withIdentifier: "detailsSegue", sender: popularMovies[indexPath.row])
     }
@@ -172,15 +176,14 @@ extension MainViewController: StoreSubscriber {
         let popularTable = state.state2.tableState
         
         switch (nowPlayingCollection, popularTable) {
-        case (.done, .done):
+        case (_, .done):
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
                 self.popularMovies = state.state2.movies
                 self.mainTable.reloadData()
                 self.mainTable.isHidden = false
             }
-        case (_, .error),
-             (.error, _):
+        case (_, .error):
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
                 self.mainTable.isHidden = true
@@ -188,7 +191,9 @@ extension MainViewController: StoreSubscriber {
                 self.view.addSubview(self.errorView!)
                 self.errorView?.tryAgainButton.addTarget(self, action: #selector(self.tryAgainTapped), for: .touchDown)
             }
-        case (.done, .loading):
+        case (.done, .loading),
+             (.error, .loading):
+            print("ENTROU AQUI")
             _ = self.fetchPopular(state: state.state2, store: store)
             DispatchQueue.main.async {
                 self.spinner.startAnimating()
@@ -256,7 +261,6 @@ extension MainViewController {
     }
     
     @objc func seeAllTapped() {
-        print("SEE ALL CLICADO")
         performSegue(withIdentifier: "seeAllSegue", sender: nil)
     }
 }
@@ -264,5 +268,11 @@ extension MainViewController {
 extension MainViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         // MARK: - TO DO
+    }
+}
+
+extension MainViewController: NowPlayingTableViewCellDelegate {
+    func didSelectedItem(movie: Result) {
+        performSegue(withIdentifier: "detailsSegue", sender: movie)
     }
 }

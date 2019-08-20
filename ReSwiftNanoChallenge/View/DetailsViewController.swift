@@ -23,7 +23,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let movie = movie else { fatalError("Movie not set") }
-        //guard let poster = poster else { fatalError("Poster not set") }
+        guard let poster = poster else { fatalError("Poster not set") }
         
         moviePoster.image = poster
         movieTitle.text = movie.title

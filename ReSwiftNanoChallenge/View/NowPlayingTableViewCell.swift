@@ -9,10 +9,15 @@
 import UIKit
 import ReSwift
 
+protocol NowPlayingTableViewCellDelegate: AnyObject {
+    func didSelectedItem(movie: Result)
+}
+
 class NowPlayingTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nowPlayingCollectionView: UICollectionView!
     var nowPlayingMovies: [Result]?
+    weak var delegate: NowPlayingTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -60,6 +65,13 @@ extension NowPlayingTableViewCell: UICollectionViewDelegate, UICollectionViewDat
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let movies = nowPlayingMovies else { return }
+        let selectedMovie = movies[indexPath.row]
+        self.delegate?.didSelectedItem(movie: selectedMovie)
+        
     }
 }
 
