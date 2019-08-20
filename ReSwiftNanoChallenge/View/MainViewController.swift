@@ -57,16 +57,20 @@ class MainViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let sender = sender as? Result                                else { fatalError() }
-        guard let destination = segue.destination as? DetailsViewController else { fatalError() }
-        guard let dictionary = store.state.popularState.posters             else { fatalError() }
-        guard let posterPath = sender.posterPath                            else { fatalError() }
-        guard let value = dictionary[posterPath]                            else { fatalError() }
-        guard let posterData = value                                        else { fatalError() }
-        guard let image = UIImage(data: posterData)                         else { fatalError() }
-
-        destination.movie = sender
-        destination.poster = image
+        
+        if segue.identifier == "detailsSegue" {
+            guard let sender = sender as? Result                                else { fatalError() }
+            guard let destination = segue.destination as? DetailsViewController else { fatalError() }
+            guard let dictionary = store.state.popularState.posters             else { fatalError() }
+            guard let posterPath = sender.posterPath                            else { fatalError() }
+            guard let value = dictionary[posterPath]                            else { fatalError() }
+            guard let posterData = value                                        else { fatalError() }
+            guard let image = UIImage(data: posterData)                         else { fatalError() }
+            
+            destination.movie = sender
+            destination.poster = image
+        }
+        
     }
 }
 
