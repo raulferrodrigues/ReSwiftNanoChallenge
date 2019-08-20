@@ -41,8 +41,12 @@ class NowPlayingTableViewCell: UITableViewCell {
 
 extension NowPlayingTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let nowPlayingMovies = nowPlayingMovies {
-            return nowPlayingMovies.count
+        if let numberOfItems = nowPlayingMovies?.count {
+            if numberOfItems > 5 {
+                return 5
+            } else {
+                return numberOfItems
+            }
         } else {
             return 0
         }
@@ -55,7 +59,8 @@ extension NowPlayingTableViewCell: UICollectionViewDelegate, UICollectionViewDat
             let imagePath = nowPlayingMovies[indexPath.row].posterPath ?? "placeholder-image"
             let title = nowPlayingMovies[indexPath.row].title ?? "'"
             let rate = nowPlayingMovies[indexPath.row].voteAverage ?? 0
-            cell.set(imagePath: imagePath, title: title, rate: String(rate))
+            let dic = store.state.nowPlayingState.posters ?? [:]
+            cell.set(image: dic[imagePath]!!, title: title, rate: String(rate))
         }
         
         return cell
@@ -91,7 +96,16 @@ extension NowPlayingTableViewCell {
                     if let error = error {
                         store.dispatch(ErrorAction(error: error))
                     } else {
-                        store.dispatch(SetNowPlaying(movies: results!, posters: [:]))
+                        guard let results = results else { return }
+                        var dic: [String: Data?] = [:]
+                        for result in results {
+                            guard let posterPath = result.posterPath else { return }
+                            Network.moviePoster(imagePath: posterPath) { (data, path) in
+                                guard let path = path else { return }
+                                dic.updateValue(data, forKey: path)
+                            }
+                        }
+                        store.dispatch(SetNowPlaying(movies: results, posters: dic))
                     }
                 }
             }

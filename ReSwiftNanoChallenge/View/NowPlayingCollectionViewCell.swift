@@ -21,8 +21,8 @@ class NowPlayingCollectionViewCell: UICollectionViewCell {
         self.moviePoster.layer.masksToBounds = true
     }
     
-    func set(imagePath: String, title: String, rate: String) {
-        self.moviePoster.image = UIImage(named: "placeholder-image")
+    func set(image: Data, title: String, rate: String) {
+        self.moviePoster.image = UIImage(data: image)
         self.movieTitle.text = title
         self.movieRate.text = rate
     }

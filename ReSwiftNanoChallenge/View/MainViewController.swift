@@ -13,14 +13,20 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var mainTable: UITableView!
     var popularMovies: [Result]?
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         mainTable.delegate = self
         mainTable.dataSource = self
+        
+        // Search Bar
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
         
         if let action = self.fetchPopular(state: store.state.popularState, store: store) {
             print("HEY THERE! FETCHPOPULAR NOT RETURNED NIL.")
@@ -43,13 +49,26 @@ class MainViewController: UIViewController {
         
         store.unsubscribe(self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let sender = sender as? Result                                else { fatalError() }
+        guard let destination = segue.destination as? DetailsViewController else { fatalError() }
+        guard let dictionary = store.state.popularState.posters             else { fatalError() }
+        guard let posterPath = sender.posterPath                            else { fatalError() }
+        guard let value = dictionary[posterPath]                            else { fatalError() }
+        guard let posterData = value                                        else { fatalError() }
+        guard let image = UIImage(data: posterData)                         else { fatalError() }
+
+        destination.movie = sender
+        destination.poster = image
+    }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 21))
         view.backgroundColor = .white
-        let label = UILabel(frame: CGRect(x: 14, y: 0, width: view.frame.width, height: view.frame.height))
+        let label = UILabel(frame: CGRect(x: 14, y: 0, width: (318-14), height: view.frame.height))
         label.font = UIFont(name: "SFProText-Semibold", size: 17)
         view.addSubview(label)
         if section == 0 {
@@ -58,6 +77,15 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             label.text = "Popular Movies"
         }
         
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 65))
+        view.backgroundColor = .white
+        let line = UIView(frame: CGRect(x: 15, y: view.frame.height/2, width: (view.frame.width-30), height: 0.5))
+        line.backgroundColor = .lightGray
+        view.addSubview(line)
         return view
     }
     
@@ -92,14 +120,27 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let popularMovies = popularMovies else { return }
+        performSegue(withIdentifier: "detailsSegue", sender: popularMovies[indexPath.row])
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         var height: CGFloat = 0
         if indexPath.section == 0 {
             height = 300
         } else {
-            height = 119
+            height = 139
         }
         return height
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 65
+        } else {
+            return 0
+        }
     }
 }
 
@@ -156,5 +197,11 @@ extension MainViewController {
             }
         }
         return nil
+    }
+}
+
+extension MainViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        // TO DO
     }
 }

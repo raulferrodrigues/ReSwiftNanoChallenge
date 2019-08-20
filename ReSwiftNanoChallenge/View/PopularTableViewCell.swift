@@ -21,6 +21,7 @@ class PopularTableViewCell: UITableViewCell {
         
         self.moviePoster.layer.cornerRadius = 10
         self.moviePoster.layer.masksToBounds = true
+        self.moviePoster.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

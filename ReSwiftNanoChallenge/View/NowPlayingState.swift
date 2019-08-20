@@ -11,6 +11,7 @@ import ReSwift
 struct NowPlayingState: StateType {
     var collectionState: DataState
     var movies: [Result]?
+    var posters: [String: Data?]?
     var error: Error?
 }
 

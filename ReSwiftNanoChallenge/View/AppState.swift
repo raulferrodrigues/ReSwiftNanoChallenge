@@ -11,4 +11,5 @@ import ReSwift
 struct AppState: StateType {
     let nowPlayingState: NowPlayingState
     let popularState: PopularState
+    let detailsState: DetailsState
 }
