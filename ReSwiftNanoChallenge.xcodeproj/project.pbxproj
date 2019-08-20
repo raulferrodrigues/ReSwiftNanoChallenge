@@ -15,6 +15,9 @@
 		3A4D911823048E93001EAB6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D911723048E93001EAB6D /* Assets.xcassets */; };
 		3A4D911B23048E93001EAB6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D911923048E93001EAB6D /* LaunchScreen.storyboard */; };
 		3A4D912A23049831001EAB6D /* MoviedbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D912923049831001EAB6D /* MoviedbAPI.swift */; };
+		3A552832230B199D00453E01 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A552831230B199D00453E01 /* DetailsViewController.swift */; };
+		3A552834230B2EC700453E01 /* DetailsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A552833230B2EC700453E01 /* DetailsState.swift */; };
+		3A552836230B2F3B00453E01 /* DetailsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A552835230B2F3B00453E01 /* DetailsReducer.swift */; };
 		A2FD5E93E15B132ACA1F3BA0 /* Pods_ReSwiftNanoChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368B41EE7B1A6041BCBC340B /* Pods_ReSwiftNanoChallenge.framework */; };
 		AA1CF643230752A20060222C /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1CF642230752A20060222C /* Actions.swift */; };
 		AA261641230A46FB00230A49 /* NowPlayingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA261640230A46FB00230A49 /* NowPlayingCollectionViewCell.swift */; };
@@ -66,6 +69,9 @@
 		3A4D911A23048E93001EAB6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A4D911C23048E93001EAB6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A4D912923049831001EAB6D /* MoviedbAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviedbAPI.swift; sourceTree = "<group>"; };
+		3A552831230B199D00453E01 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		3A552833230B2EC700453E01 /* DetailsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsState.swift; sourceTree = "<group>"; };
+		3A552835230B2F3B00453E01 /* DetailsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsReducer.swift; sourceTree = "<group>"; };
 		AA1CF642230752A20060222C /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Actions.swift; path = ReSwiftNanoChallenge/View/Actions.swift; sourceTree = SOURCE_ROOT; };
 		AA261640230A46FB00230A49 /* NowPlayingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA32A62823071EA200DC41E8 /* PopularState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularState.swift; sourceTree = "<group>"; };
@@ -146,7 +152,6 @@
 				3A4D9123230495C8001EAB6D /* State */,
 				3A4D91222304951F001EAB6D /* Support */,
 				AAFC2B002305F32F008FC5C5 /* View */,
-				3A4D336D23074C87009E23F1 /* Details.storyboard */,
 			);
 			path = ReSwiftNanoChallenge;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 				AAFC2B052305FEB6008FC5C5 /* AppState.swift */,
 				AAFC2B0B23060692008FC5C5 /* NowPlayingState.swift */,
 				AA32A62823071EA200DC41E8 /* PopularState.swift */,
+				3A552833230B2EC700453E01 /* DetailsState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -180,6 +186,7 @@
 				AAFC2B092305FFED008FC5C5 /* AppReducer.swift */,
 				AAFC2B0D230607C2008FC5C5 /* NowPlayingReducer.swift */,
 				AA32A62A230727FB00DC41E8 /* PopularReducer.swift */,
+				3A552835230B2F3B00453E01 /* DetailsReducer.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -243,8 +250,10 @@
 		AAFC2B002305F32F008FC5C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3A4D336D23074C87009E23F1 /* Details.storyboard */,
 				3A4D911123048E92001EAB6D /* Main.storyboard */,
 				AAFC2B012305F380008FC5C5 /* MainViewController.swift */,
+				3A552831230B199D00453E01 /* DetailsViewController.swift */,
 				AA32A62C2307300400DC41E8 /* NowPlayingTableViewCell.swift */,
 				AA5C90DD230A35DA00FDB934 /* PopularTableViewCell.swift */,
 				AA261640230A46FB00230A49 /* NowPlayingCollectionViewCell.swift */,
@@ -420,8 +429,11 @@
 				AAFC2B062305FEB6008FC5C5 /* AppState.swift in Sources */,
 				AAFC2B0A2305FFED008FC5C5 /* AppReducer.swift in Sources */,
 				AA32A62B230727FB00DC41E8 /* PopularReducer.swift in Sources */,
+				3A552836230B2F3B00453E01 /* DetailsReducer.swift in Sources */,
 				AA32A62D2307300400DC41E8 /* NowPlayingTableViewCell.swift in Sources */,
 				AA32A62923071EA200DC41E8 /* PopularState.swift in Sources */,
+				3A552832230B199D00453E01 /* DetailsViewController.swift in Sources */,
+				3A552834230B2EC700453E01 /* DetailsState.swift in Sources */,
 				3A4D911623048E92001EAB6D /* ReSwiftNanoChallenge.xcdatamodeld in Sources */,
 				AA5C90DE230A35DA00FDB934 /* PopularTableViewCell.swift in Sources */,
 				3A4D912A23049831001EAB6D /* MoviedbAPI.swift in Sources */,
