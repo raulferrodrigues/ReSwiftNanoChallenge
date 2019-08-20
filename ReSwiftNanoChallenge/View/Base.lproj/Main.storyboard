@@ -210,6 +210,7 @@
                     <connections>
                         <outlet property="mainTable" destination="Rbb-W4-BSo" id="4aT-yV-Gg6"/>
                         <outlet property="searchDisplayController" destination="I1f-Ix-wNR" id="C6P-uU-DOD"/>
+                        <segue destination="vkD-uu-TD8" kind="show" identifier="seeAllSegue" id="voj-BG-zmc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -231,6 +232,14 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
+        </scene>
+        <!--SeeAll-->
+        <scene sceneID="8LS-GH-OLm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SeeAll" id="vkD-uu-TD8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8rD-Jt-GSY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1624" y="3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mkb-r8-VOh">
