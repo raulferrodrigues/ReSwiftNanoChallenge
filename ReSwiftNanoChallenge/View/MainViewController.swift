@@ -17,8 +17,6 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         mainTable.delegate = self
         mainTable.dataSource = self
         
@@ -42,6 +40,19 @@ class MainViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         store.unsubscribe(self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let sender = sender as? Result                                else { fatalError() }
+        guard let destination = segue.destination as? DetailsViewController else { fatalError() }
+        guard let dictionary = store.state.popularState.posters             else { fatalError() }
+        guard let posterPath = sender.posterPath                            else { fatalError() }
+        guard let value = dictionary[posterPath]                            else { fatalError() }
+        guard let posterData = value                                        else { fatalError() }
+        guard let image = UIImage(data: posterData)                         else { fatalError() }
+
+        destination.movie = sender
+        destination.poster = image
     }
 }
 
@@ -90,6 +101,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             }
             return cell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let popularMovies = popularMovies else { return }
+        performSegue(withIdentifier: "detailsSegue", sender: popularMovies[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

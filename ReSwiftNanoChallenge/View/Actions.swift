@@ -12,6 +12,8 @@ struct GetPopular: Action { }
 
 struct GetNowPlaying: Action { }
 
+struct GetDetails: Action { }
+
 struct SetPopular: Action {
     let movies: [Result]
     let posters: [String: Data?]
@@ -20,6 +22,11 @@ struct SetPopular: Action {
 struct SetNowPlaying: Action {
     let movies: [Result]
     let posters: [String: Data?]
+}
+
+struct SetDetails: Action {
+    let id: Int
+    let details: Details
 }
 
 struct ErrorAction: Action {
