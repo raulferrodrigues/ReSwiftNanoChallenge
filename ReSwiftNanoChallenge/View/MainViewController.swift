@@ -214,6 +214,7 @@ extension MainViewController {
                         guard var results = results else { return }
                         guard let nowPlayingResults = store.state.nowPlayingState.movies else { return }
                         
+                        // REMOVE MOVIES THAT ARE NOW PLAYING FROM POPULAR MOVIES
                         for index in 0 ... 4 {
                             let movie = nowPlayingResults[index]
                             results = results.filter{
@@ -221,6 +222,7 @@ extension MainViewController {
                             }
                         }
                         
+                        // SORT POPULAR MOVIES BY AVERAGE VOTE
                         results.sort(by: { (movieA, movieB) -> Bool in
                             movieA.voteAverage! > movieB.voteAverage!
                         })
@@ -251,6 +253,7 @@ extension MainViewController {
     
     @objc func seeAllTapped() {
         print("SEE ALL CLICADO")
+        
     }
 }
 

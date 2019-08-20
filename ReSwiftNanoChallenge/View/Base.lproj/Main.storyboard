@@ -212,6 +212,7 @@
                     <connections>
                         <outlet property="mainTable" destination="Rbb-W4-BSo" id="4aT-yV-Gg6"/>
                         <outlet property="searchDisplayController" destination="I1f-Ix-wNR" id="C6P-uU-DOD"/>
+                        <segue destination="vkD-uu-TD8" kind="show" identifier="seeAllSegue" id="voj-BG-zmc"/>
                         <segue destination="314-o0-o7T" kind="show" identifier="detailsSegue" id="Z07-hF-gB0"/>
                     </connections>
                 </viewController>
@@ -242,6 +243,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WsT-Py-Hxg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1614" y="21"/>
+        </scene>
+        <!--SeeAll-->
+        <scene sceneID="8LS-GH-OLm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SeeAll" id="vkD-uu-TD8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8rD-Jt-GSY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1624" y="3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mkb-r8-VOh">
