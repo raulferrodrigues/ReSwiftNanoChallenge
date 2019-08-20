@@ -13,7 +13,8 @@ func popularReducer(action: Action, state: PopularState?) -> PopularState {
     
     switch action {
     case _ as GetPopular:
-        break
+        state.tableState = .loading
+        state.error = nil
     case let action as SetPopular:
         state.movies = action.movies
         state.posters = action.posters

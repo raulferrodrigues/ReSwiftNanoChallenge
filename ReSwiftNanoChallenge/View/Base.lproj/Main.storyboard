@@ -58,7 +58,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="152" height="293"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="Ohl-OP-M7e">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ohl-OP-M7e">
                                                                         <rect key="frame" x="0.0" y="16" width="152" height="223"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dp4-Dz-fPR">
@@ -126,7 +126,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qxy-gv-BaN">
                                                     <rect key="frame" x="0.0" y="10" width="414" height="119"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="zAF-Z3-rgh">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zAF-Z3-rgh">
                                                             <rect key="frame" x="14" y="0.0" width="80" height="119"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="zAF-Z3-rgh" secondAttribute="height" multiplier="80:119" id="ke4-Qa-vix"/>
@@ -210,7 +210,6 @@
                     <connections>
                         <outlet property="mainTable" destination="Rbb-W4-BSo" id="4aT-yV-Gg6"/>
                         <outlet property="searchDisplayController" destination="I1f-Ix-wNR" id="C6P-uU-DOD"/>
-                        <segue destination="Jjf-J9-RKe" kind="show" identifier="detailsSegue" id="Xv8-Un-ZqS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -232,14 +231,6 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
-        </scene>
-        <!--Details-->
-        <scene sceneID="zWa-6s-V23">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Details" id="Jjf-J9-RKe" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mow-Yd-D6K" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2231" y="115"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mkb-r8-VOh">
@@ -265,7 +256,6 @@
     </scenes>
     <resources>
         <image name="Star Icon" width="17" height="16.5"/>
-        <image name="placeholder-image" width="152" height="229"/>
         <namedColor name="DarkGray">
             <color red="0.50980392156862742" green="0.50980392156862742" blue="0.50980392156862742" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
