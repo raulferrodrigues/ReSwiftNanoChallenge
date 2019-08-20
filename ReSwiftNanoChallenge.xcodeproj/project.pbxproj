@@ -41,6 +41,8 @@
 		AA4901C5230A3E5000E7D472 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA490198230A3E4F00E7D472 /* SF-Pro-Text-Semibold.otf */; };
 		AA4901CD230A3EF800E7D472 /* colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4901CC230A3EF800E7D472 /* colors.xcassets */; };
 		AA5C90DE230A35DA00FDB934 /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C90DD230A35DA00FDB934 /* PopularTableViewCell.swift */; };
+		AAE22E06230B73DA00F35286 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE22E05230B73DA00F35286 /* ErrorView.xib */; };
+		AAE22E08230B7B3600F35286 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE22E07230B7B3600F35286 /* ErrorView.swift */; };
 		AAFC2B022305F380008FC5C5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC2B012305F380008FC5C5 /* MainViewController.swift */; };
 		AAFC2B062305FEB6008FC5C5 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC2B052305FEB6008FC5C5 /* AppState.swift */; };
 		AAFC2B0A2305FFED008FC5C5 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFC2B092305FFED008FC5C5 /* AppReducer.swift */; };
@@ -86,6 +88,8 @@
 		AA490198230A3E4F00E7D472 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		AA4901CC230A3EF800E7D472 /* colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = colors.xcassets; sourceTree = "<group>"; };
 		AA5C90DD230A35DA00FDB934 /* PopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
+		AAE22E05230B73DA00F35286 /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		AAE22E07230B7B3600F35286 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		AAFC2B012305F380008FC5C5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AAFC2B052305FEB6008FC5C5 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppState.swift; path = ReSwiftNanoChallenge/View/AppState.swift; sourceTree = SOURCE_ROOT; };
 		AAFC2B092305FFED008FC5C5 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppReducer.swift; path = ReSwiftNanoChallenge/View/AppReducer.swift; sourceTree = SOURCE_ROOT; };
@@ -238,6 +242,8 @@
 				AA32A62C2307300400DC41E8 /* NowPlayingTableViewCell.swift */,
 				AA5C90DD230A35DA00FDB934 /* PopularTableViewCell.swift */,
 				AA261640230A46FB00230A49 /* NowPlayingCollectionViewCell.swift */,
+				AAE22E05230B73DA00F35286 /* ErrorView.xib */,
+				AAE22E07230B7B3600F35286 /* ErrorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -322,6 +328,7 @@
 				AA4901C3230A3E5000E7D472 /* SF-Pro-Text-MediumItalic.otf in Resources */,
 				AA4901B5230A3E5000E7D472 /* SF-Pro-Text-Medium.otf in Resources */,
 				AA4901C5230A3E5000E7D472 /* SF-Pro-Text-Semibold.otf in Resources */,
+				AAE22E06230B73DA00F35286 /* ErrorView.xib in Resources */,
 				3A4D911B23048E93001EAB6D /* LaunchScreen.storyboard in Resources */,
 				AA4901B6230A3E5000E7D472 /* SF-Pro-Text-Ultralight.otf in Resources */,
 				3A4D911823048E93001EAB6D /* Assets.xcassets in Resources */,
@@ -409,6 +416,7 @@
 				AA5C90DE230A35DA00FDB934 /* PopularTableViewCell.swift in Sources */,
 				3A4D912A23049831001EAB6D /* MoviedbAPI.swift in Sources */,
 				AAFC2B022305F380008FC5C5 /* MainViewController.swift in Sources */,
+				AAE22E08230B7B3600F35286 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

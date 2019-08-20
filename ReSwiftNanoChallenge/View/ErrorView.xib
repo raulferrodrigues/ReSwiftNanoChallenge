@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ErrorView" customModule="ReSwiftNanoChallenge" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="rpF-c8-EUN"/>
+                <outlet property="tryAgainButton" destination="Tgf-Ld-1KL" id="b0g-4y-RSh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="HiI-uc-px1">
+                    <rect key="frame" x="150" y="204" width="114" height="114"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="HiI-uc-px1" secondAttribute="height" multiplier="1:1" id="M5P-c4-8Eg"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNR-Oq-AXL">
+                    <rect key="frame" x="177.5" y="340" width="59" height="24"/>
+                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="20"/>
+                    <color key="textColor" red="0.0039215686274509803" green="0.82352941176470584" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looks like an error occurred. Please try again later." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQB-N6-MnN">
+                    <rect key="frame" x="99.5" y="384" width="215.5" height="38.5"/>
+                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
+                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgf-Ld-1KL">
+                    <rect key="frame" x="112.5" y="456.5" width="189" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Tgf-Ld-1KL" secondAttribute="height" multiplier="189:47" id="Cbt-ta-DdJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="20"/>
+                    <state key="normal" title="Try again">
+                        <color key="titleColor" name="VeryDarkGray"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Tgf-Ld-1KL" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="189:414" id="1Pq-IP-tRU"/>
+                <constraint firstItem="MNR-Oq-AXL" firstAttribute="centerX" secondItem="HiI-uc-px1" secondAttribute="centerX" id="3Vr-xL-0ij"/>
+                <constraint firstItem="MNR-Oq-AXL" firstAttribute="top" secondItem="HiI-uc-px1" secondAttribute="bottom" constant="22" id="5oQ-Sf-h0s"/>
+                <constraint firstItem="HQB-N6-MnN" firstAttribute="centerX" secondItem="MNR-Oq-AXL" secondAttribute="centerX" id="Ekf-Ka-Adu"/>
+                <constraint firstItem="HQB-N6-MnN" firstAttribute="top" secondItem="MNR-Oq-AXL" secondAttribute="bottom" constant="20" id="Hkz-yB-lXC"/>
+                <constraint firstItem="HiI-uc-px1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="160" id="MDX-nB-kOX"/>
+                <constraint firstItem="Tgf-Ld-1KL" firstAttribute="centerX" secondItem="HQB-N6-MnN" secondAttribute="centerX" id="WQT-8r-7Vc"/>
+                <constraint firstItem="HiI-uc-px1" firstAttribute="width" secondItem="vUN-kp-3ea" secondAttribute="width" multiplier="114:414" id="jWp-Qx-99W"/>
+                <constraint firstItem="HiI-uc-px1" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="kXh-fk-pMm"/>
+                <constraint firstItem="Tgf-Ld-1KL" firstAttribute="top" secondItem="HQB-N6-MnN" secondAttribute="bottom" constant="34" id="whD-nz-mj4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="186.95652173913044" y="72.321428571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cancel" width="114" height="114"/>
+        <namedColor name="VeryDarkGray">
+            <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

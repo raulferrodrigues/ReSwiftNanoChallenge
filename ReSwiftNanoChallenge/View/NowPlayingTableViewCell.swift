@@ -20,10 +20,6 @@ class NowPlayingTableViewCell: UITableViewCell {
         nowPlayingCollectionView.delegate = self
         nowPlayingCollectionView.dataSource = self
         
-        if let action = fetchNowPlaying(state: store.state.nowPlayingState, store: store) {
-            store.dispatch(action)
-        }
-        
         store.subscribe(self) {
             $0.select{
                 $0.nowPlayingState
@@ -72,8 +68,12 @@ extension NowPlayingTableViewCell: StoreSubscriber {
     
     func newState(state: NowPlayingState) {
         switch state.collectionState {
-        case .loading,
-            .error:
+        case .loading:
+            _ = self.fetchNowPlaying(state: state, store: store)
+            DispatchQueue.main.async {
+                self.nowPlayingCollectionView.isHidden = false
+            }
+        case .error:
             DispatchQueue.main.async {
                 self.nowPlayingCollectionView.isHidden = false
             }

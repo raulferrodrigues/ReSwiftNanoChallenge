@@ -13,7 +13,8 @@ func nowPlayingReducer(action: Action, state: NowPlayingState?) -> NowPlayingSta
     
     switch action {
     case _ as GetNowPlaying:
-        break
+        state.collectionState = .loading
+        state.error = nil
     case let action as SetNowPlaying:
         state.movies = action.movies
         state.posters = action.posters
