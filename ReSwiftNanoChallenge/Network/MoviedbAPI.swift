@@ -76,6 +76,25 @@ class Network {
             completionHandler(nil, nil)
         }
     }
+    
+    static func genres(ids: [Int], completionHandler: @escaping ([Int: String]) -> Void) {
+        let url = URL(string:  "https://api.themoviedb.org/3/genre/movie/list?api_key=\(apiKey)&language=en-US")
+        var dictionary: [Int: String] = [:]
+        if let url = url, let data = try? Data(contentsOf: url) {
+            let decoder = JSONDecoder()
+            let data = try? decoder.decode(GenreList.self, from: data)
+            
+            if let data = data, let genres = data.genres {
+                for genre in genres {
+                    if let id = genre.id, let name = genre.name {
+                        dictionary.updateValue(name, forKey: id)
+                    }
+                }
+            }
+        }
+        completionHandler(dictionary)
+    }
+    
 }
 
 // MARK: - NowPlaying
@@ -177,6 +196,12 @@ struct Result: Codable {
         case adult, overview
         case releaseDate = "release_date"
     }
+}
+
+
+// MARK: - Genres
+struct GenreList: Codable {
+    let genres: [Genre]?
 }
 
 // MARK: - Genre

@@ -23,12 +23,29 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let movie = movie else { fatalError("Movie not set") }
-        //guard let poster = poster else { fatalError("Poster not set") }
+        guard let poster = poster else { fatalError("Poster not set") }
         
         moviePoster.image = poster
         movieTitle.text = movie.title
-        movieRating.text = "\(movie.popularity)"
+        
+        guard let voteAvarage = movie.voteAverage else { return }
+        movieRating.text = "\(voteAvarage)"
         movieOverview.text = movie.overview
+        
+        
+        guard let genres = movie.genreIDS else { return }
+        DispatchQueue.main.async { [weak self, genres] in
+            Network.genres(ids: genres) { dictionary in
+                if genres.count > 0 {
+                    let firstGenre = dictionary[genres[0]]
+                    var str = "\(firstGenre ?? "Erro")"
+                    for n in 1 ..< genres.count {
+                        str += ", \(dictionary[genres[n]] ?? "Erro")"
+                    }
+                    self?.movieGenre.text = str
+                }
+            }
+        }
     }
     
 
