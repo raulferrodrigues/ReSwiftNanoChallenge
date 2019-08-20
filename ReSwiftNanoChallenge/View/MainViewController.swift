@@ -234,7 +234,7 @@ extension MainViewController {
     
     @objc func seeAllTapped() {
         print("SEE ALL CLICADO")
-        
+        performSegue(withIdentifier: "seeAllSegue", sender: nil)
     }
 }
 

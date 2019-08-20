@@ -206,7 +206,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="MovieDB" id="AF2-xF-Ebl"/>
+                    <navigationItem key="navigationItem" title="MovieDB" id="AF2-xF-Ebl">
+                        <barButtonItem key="backBarButtonItem" title=" " id="QDi-lp-gqv"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mainTable" destination="Rbb-W4-BSo" id="4aT-yV-Gg6"/>
                         <outlet property="searchDisplayController" destination="I1f-Ix-wNR" id="C6P-uU-DOD"/>

@@ -1,7 +1,138 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N5J-JY-gZe">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Now Playing-->
+        <scene sceneID="XC9-OB-VbT">
+            <objects>
+                <viewController id="N5J-JY-gZe" customClass="SeeAllViewController" customModule="ReSwiftNanoChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L0Z-YA-Ehg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Showing...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0b-1W-Sow">
+                                <rect key="frame" x="22" y="64" width="78.5" height="18"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="15"/>
+                                <color key="textColor" name="MediumGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="is9-mP-fLt">
+                                <rect key="frame" x="0.0" y="102" width="414" height="760"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="25" id="vV1-AW-tWt">
+                                    <size key="itemSize" width="152" height="277"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="23" minY="0.0" maxX="23" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="movieCell" id="D5D-ww-OPe" customClass="SeeAllCollectionViewCell" customModule="ReSwiftNanoChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="23" y="0.0" width="152" height="277"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="152" height="277"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l6A-rJ-cjn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="152" height="229"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="l6A-rJ-cjn" secondAttribute="height" multiplier="152:229" id="12w-3U-RSC"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMf-pa-NmD">
+                                                    <rect key="frame" x="0.0" y="239" width="144" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jz-Bw-CwX">
+                                                    <rect key="frame" x="0.0" y="262" width="13" height="13"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="3Jz-Bw-CwX" secondAttribute="height" multiplier="13:13" id="GCY-Xi-wdN"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Star Icon"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEb-Qm-xp6">
+                                                    <rect key="frame" x="18" y="261.5" width="8" height="14.5"/>
+                                                    <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                                                    <color key="textColor" name="MediumGray"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="qEb-Qm-xp6" firstAttribute="leading" secondItem="3Jz-Bw-CwX" secondAttribute="trailing" constant="5" id="0ld-Ct-jab"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qEb-Qm-xp6" secondAttribute="trailing" id="5Ub-Eq-xxt"/>
+                                            <constraint firstItem="3Jz-Bw-CwX" firstAttribute="width" secondItem="D5D-ww-OPe" secondAttribute="width" multiplier="13:152" id="9Vs-Id-aER"/>
+                                            <constraint firstAttribute="bottom" secondItem="3Jz-Bw-CwX" secondAttribute="bottom" constant="2" id="AX1-rW-tI3"/>
+                                            <constraint firstItem="hMf-pa-NmD" firstAttribute="top" secondItem="l6A-rJ-cjn" secondAttribute="bottom" constant="10" id="JJk-xt-LpS"/>
+                                            <constraint firstItem="3Jz-Bw-CwX" firstAttribute="top" secondItem="hMf-pa-NmD" secondAttribute="bottom" constant="6" id="Kuj-Tf-1ez"/>
+                                            <constraint firstAttribute="trailing" secondItem="l6A-rJ-cjn" secondAttribute="trailing" id="KxP-6C-5h8"/>
+                                            <constraint firstItem="l6A-rJ-cjn" firstAttribute="top" secondItem="D5D-ww-OPe" secondAttribute="top" id="LIn-L5-DTQ"/>
+                                            <constraint firstItem="qEb-Qm-xp6" firstAttribute="centerY" secondItem="3Jz-Bw-CwX" secondAttribute="centerY" id="MlE-EN-Dg8"/>
+                                            <constraint firstItem="hMf-pa-NmD" firstAttribute="leading" secondItem="D5D-ww-OPe" secondAttribute="leading" id="QW7-pd-Q9M"/>
+                                            <constraint firstItem="3Jz-Bw-CwX" firstAttribute="leading" secondItem="D5D-ww-OPe" secondAttribute="leading" id="n9M-xY-gcs"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="hMf-pa-NmD" secondAttribute="trailing" id="tcq-zR-Rsk"/>
+                                            <constraint firstItem="l6A-rJ-cjn" firstAttribute="leading" secondItem="D5D-ww-OPe" secondAttribute="leading" id="uI6-hx-NWl"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="poster" destination="l6A-rJ-cjn" id="o8c-OI-qDB"/>
+                                            <outlet property="rate" destination="qEb-Qm-xp6" id="Wnh-lq-Px4"/>
+                                            <outlet property="title" destination="hMf-pa-NmD" id="TDc-bv-uid"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="is9-mP-fLt" firstAttribute="leading" secondItem="Zg8-Zi-Cb5" secondAttribute="leading" id="3wc-aM-ts8"/>
+                            <constraint firstItem="is9-mP-fLt" firstAttribute="top" secondItem="v0b-1W-Sow" secondAttribute="bottom" constant="20" id="7XL-bU-REQ"/>
+                            <constraint firstItem="v0b-1W-Sow" firstAttribute="leading" secondItem="Zg8-Zi-Cb5" secondAttribute="leading" constant="22" id="8Sv-XR-HC6"/>
+                            <constraint firstItem="Zg8-Zi-Cb5" firstAttribute="trailing" secondItem="is9-mP-fLt" secondAttribute="trailing" id="UBO-kP-FT1"/>
+                            <constraint firstItem="v0b-1W-Sow" firstAttribute="top" secondItem="Zg8-Zi-Cb5" secondAttribute="top" constant="20" id="kYw-7o-KhE"/>
+                            <constraint firstItem="Zg8-Zi-Cb5" firstAttribute="bottom" secondItem="is9-mP-fLt" secondAttribute="bottom" id="pEh-K6-deG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zg8-Zi-Cb5"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Now Playing" largeTitleDisplayMode="never" id="2gj-Wv-d8d"/>
+                    <connections>
+                        <outlet property="moviesCollectionView" destination="is9-mP-fLt" id="WfL-nZ-3iK"/>
+                        <outlet property="showingLabel" destination="v0b-1W-Sow" id="hbc-7H-ytj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g3Z-a5-1F3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-320" y="-143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Star Icon" width="17" height="16.5"/>
+        <namedColor name="MediumGray">
+            <color red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
