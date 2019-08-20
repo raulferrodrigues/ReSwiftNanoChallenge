@@ -11,6 +11,7 @@ import ReSwift
 
 class MainViewController: UIViewController {
 
+    
     @IBOutlet weak var mainTable: UITableView!
     var popularMovies: [Result]?
     let searchController = UISearchController(searchResultsController: nil)

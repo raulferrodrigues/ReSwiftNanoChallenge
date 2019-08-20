@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="21" sectionFooterHeight="21" translatesAutoresizingMaskIntoConstraints="NO" id="Rbb-W4-BSo">
-                                <rect key="frame" x="0.0" y="166" width="414" height="696"/>
+                                <rect key="frame" x="0.0" y="165" width="414" height="697"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="nowPlayingCell" rowHeight="300" id="idN-QI-MHZ" customClass="NowPlayingTableViewCell" customModule="ReSwiftNanoChallenge" customModuleProvider="target">
@@ -200,8 +200,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Rbb-W4-BSo" secondAttribute="bottom" id="IWS-0d-HFg"/>
+                            <constraint firstItem="Rbb-W4-BSo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="UiG-Bf-NF5"/>
                             <constraint firstItem="Rbb-W4-BSo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cxj-gS-JP8"/>
-                            <constraint firstItem="Rbb-W4-BSo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="h6g-jm-ahq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rbb-W4-BSo" secondAttribute="trailing" id="z50-ug-QWS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
