@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Details View Controller-->
+        <!--Movie Details-->
         <scene sceneID="rHo-4i-jj7">
             <objects>
                 <viewController id="6V2-n0-8e1" customClass="DetailsViewController" customModule="ReSwiftNanoChallenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -91,7 +91,7 @@ Simba idolises his father, King Mufasa, and takes to heart his own royal destiny
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gUy-jC-jnr"/>
                     </view>
-                    <navigationItem key="navigationItem" id="H9E-B3-hBf"/>
+                    <navigationItem key="navigationItem" title="Movie Details" largeTitleDisplayMode="never" id="goz-ay-YPh"/>
                     <connections>
                         <outlet property="movieGenre" destination="SvM-gN-5H1" id="tmW-mi-IfN"/>
                         <outlet property="movieOverview" destination="whn-ge-fxn" id="op3-Ej-raS"/>

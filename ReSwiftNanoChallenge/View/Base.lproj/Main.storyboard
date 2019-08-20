@@ -206,10 +206,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="MovieDB" id="AF2-xF-Ebl"/>
+                    <navigationItem key="navigationItem" title="MovieDB" id="AF2-xF-Ebl">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ock-Xr-z6i"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mainTable" destination="Rbb-W4-BSo" id="4aT-yV-Gg6"/>
                         <outlet property="searchDisplayController" destination="I1f-Ix-wNR" id="C6P-uU-DOD"/>
+                        <segue destination="314-o0-o7T" kind="show" identifier="detailsSegue" id="Z07-hF-gB0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -232,6 +235,14 @@
             </objects>
             <point key="canvasLocation" x="957.97101449275374" y="20.758928571428569"/>
         </scene>
+        <!--Details-->
+        <scene sceneID="Tbg-gh-R4k">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Details" id="314-o0-o7T" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WsT-Py-Hxg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614" y="21"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="mkb-r8-VOh">
             <objects>
@@ -240,6 +251,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="896-fa-5Wt">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fN2-4b-vLW">
